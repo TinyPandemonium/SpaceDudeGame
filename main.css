@@ -1,9 +1,17 @@
 /* styling for page overall */
+label {
+    display:block;
 
+}
 
+input,
+label {
+    margin: 1rem 0;
+}
 
-
-
+#wrongGuesses {
+    color: red;
+}
 
 /* styling for incorrect guesses */
 
