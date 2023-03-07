@@ -1,25 +1,17 @@
 /* styling for page overall */
-label {
-    display:block;
+#guesses {
+    border: 1rem;
+    border-color: aqua;
+    position: fixed;
+}
+
+#word {
+    text-align: center;
+    font-size: 5rem;
+    font-weight: bold;
 
 }
 
-input,
-label {
-    margin: 1rem 0;
+h5 {
+    font-size: 5rem;
 }
-
-#wrongGuesses {
-    color: red;
-}
-
-/* styling for incorrect guesses */
-
-
-
-
-/* styling for inputted letters */
-
-
-
-/* styling for previously guessed letters */
