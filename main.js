@@ -2,7 +2,8 @@
 
 const wordBank = [
 'snarl',
-//  'dominate', 'retailer', 'prejudice', 'integration',
+ 'dominate', 
+//  'retailer', 'prejudice', 'integration',
 // 'separation', 'tradition', 'ghostwriter', 'section', 'decay',
 // 'convention', 'admission', 'diagram', 'ecstasy', 'activity',
 // 'medieval', 'brainstorm', 'portrait', 'moving', 'modernize',
@@ -79,8 +80,8 @@ function Game() {
         wrongGuesses++;
         lost = wrongGuesses >= maxGuesses;
     }
+	
     return {
-        "getWord": function(){ return word; },
 		"getHiddendWord": function(){ return hiddenWord; },
 		"guess": guess,
 		"getPossibleGuesses": function(){ return [... possibleGuesses]; },
@@ -92,9 +93,11 @@ function Game() {
 
 }
 
+//function for moving correctly guessed letters into the correct index of letter
+
 function replace( value, index, replacement ) 
 {
-    return value.substr(0, index) + replacement + value.substr(index + replacement.length);
+    return value.substr(0, index) + replacement + value.substr(index + replacement.length);	
 }
 
 function listenForInput( game ) 
@@ -128,20 +131,6 @@ function listenForInput( game )
 	document.body.addEventListener('click', handleClick );
 }
 
-//logic for checking if game is still won or lost and if it isn't then continue to play 
-
-function guessWord( game )
-{
-	let gameStillGoing = !game.isWon() && 
-						 !game.isLost();
-	let guessedWord = document.getElementById('winLose').value;
-	if( gameStillGoing )
-	{
-		game.guessWord( guessedWord );
-		render( game );
-	}
-}
-
 //code for launching the game and setting up the win and lose parameters
 
 function render( game )
@@ -170,6 +159,8 @@ function render( game )
 		winLose.innerText = "";
 	}
 }
+
+//code for starting a new game
 
 function newGame()
 {

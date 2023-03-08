@@ -1,17 +1,24 @@
 /* styling for page overall */
-#guesses {
-    border: 1rem;
-    border-color: aqua;
-    position: fixed;
+body {
+    max-width: 30rem;
+    margin: auto;
 }
 
 #word {
-    text-align: center;
-    font-size: 5rem;
+    font-size: 2rem;
+    letter-spacing: 2rem;
     font-weight: bold;
-
 }
 
-h5 {
-    font-size: 5rem;
+#guesses {
+    text-align: center;
+    font-size: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    
+}
+
+#wrongGuessArea {
+   color:steelblue;
 }
