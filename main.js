@@ -79,7 +79,7 @@ function Game() {
     let wrongGuess = function() {
         wrongGuesses++;
         lost = wrongGuesses >= maxGuesses;
-		console.log(wrongGuesses)
+		document.getElementById("currentGuess").innerText = `wrong guess: ${wrongGuesses} of ${maxGuesses}`;
     }
 	
     return {
@@ -151,7 +151,7 @@ function render( game )
 	else if( game.isLost() )
 	{
 		winLose.value = youLost;
-		winLose.innerText = "you lose ):";
+		winLose.innerText = "you lose. :(";
 	}
 	else
 	{
