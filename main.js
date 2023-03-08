@@ -79,6 +79,7 @@ function Game() {
     let wrongGuess = function() {
         wrongGuesses++;
         lost = wrongGuesses >= maxGuesses;
+		console.log(wrongGuesses)
     }
 	
     return {
@@ -90,7 +91,7 @@ function Game() {
 		"isLost": function(){ return lost; },
     }
 
-
+	
 }
 
 //function for moving correctly guessed letters into the correct index of letter
@@ -127,7 +128,6 @@ function listenForInput( game )
 	}
 
 	
-
 	document.body.addEventListener('click', handleClick );
 }
 
@@ -146,12 +146,12 @@ function render( game )
 	if( game.isWon() )
 	{
 		winLose.value = youWon;
-		winLose.innerText = "win";
+		winLose.innerText = "you won! :D";
 	}
 	else if( game.isLost() )
 	{
 		winLose.value = youLost;
-		winLose.innerText = "loss";
+		winLose.innerText = "you lose ):";
 	}
 	else
 	{

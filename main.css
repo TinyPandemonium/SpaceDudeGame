@@ -2,12 +2,15 @@
 body {
     max-width: 30rem;
     margin: auto;
+    background-color: aliceblue;
 }
 
 #word {
     font-size: 2rem;
     letter-spacing: 2rem;
     font-weight: bold;
+    text-align: center;
+    
 }
 
 #guesses {
@@ -16,9 +19,30 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-content: center;
-    
+    border: 16px solid;
+    border-color: cadetblue;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 #wrongGuessArea {
    color:steelblue;
+}
+#controls {
+    font-size: 3rem;
+}
+.guess {
+    border: 3px solid;
+    border-color:darkolivegreen;
+    margin: 6px;
+    align-content: space-around;
+    justify-content: center;
+    cursor: pointer;
+    padding: .5rem 1rem;
+    display: flex;
+    width: 1%;
+}
+
+#winLose {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: chocolate;
 }
