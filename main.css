@@ -65,5 +65,12 @@ body {
     #guesses {
         font-size: 2rem;
     }
+
+    #intro {
+        font-size: 1.5rem;
+        justify-content: center;
+        position: absolute;
+        display:initial;
+    }
     
 }

@@ -18,10 +18,10 @@ const wordBank = [
 // 'future' , 'divide', 'friend', 'doctor', 'testament'
 ]
 
-//declaring game and its parameters
+//declaring game and the parameters for winning and losing
 
-const youWon = "You Won!"
-const youLost = "You Lost!"
+const youWon = ""
+const youLost = ""
 
 function Game() {
 
@@ -47,7 +47,7 @@ function Game() {
         hiddenWord += nextLetter;
     }
 
-	//logic used to push in correct letter guesses
+	//logic used to push in correct letter guesses to their respective locations
 
     let guess = function(letter) {
         letter = letter.toUpperCase();
@@ -80,6 +80,12 @@ function Game() {
         wrongGuesses++;
         lost = wrongGuesses >= maxGuesses;
 		document.getElementById("currentGuess").innerText = `wrong guess: ${wrongGuesses} of ${maxGuesses}`;
+		
+		//throws the correct word into the intro string if the user could not guess correctly
+		
+		if (lost) {
+			document.getElementById("intro").innerText = `the correct word was ${word}`;
+		}
     }
 	
     return {
@@ -101,16 +107,18 @@ function replace( value, index, replacement )
     return value.substr(0, index) + replacement + value.substr(index + replacement.length);	
 }
 
-function listenForInput( game ) 
-{
+//logic to keep the game moving along if it's neither won or lost
+
+function listenForInput( game ) {
 	let guessLetter = function( letter )
 	{
 		if( letter )
 		{
+			document.getElementById("intro").innerText = "";
 			let gameStillGoing = !game.isWon() && 
 								 !game.isLost();
-			if( gameStillGoing )
-			{
+			if( gameStillGoing ) {
+			
 				game.guess( letter );
 				render( game );
 			}
@@ -125,6 +133,7 @@ function listenForInput( game )
 	    {
 	    	guessLetter( event.target.innerHTML );
 	    }
+		
 	}
 
 	
@@ -152,6 +161,7 @@ function render( game )
 	{
 		winLose.value = youLost;
 		winLose.innerText = "you lose. :(";
+		
 	}
 	else
 	{
@@ -160,7 +170,7 @@ function render( game )
 	}
 }
 
-//code for starting a new game
+//code for calling a new game
 
 function newGame()
 {

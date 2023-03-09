@@ -1,6 +1,12 @@
-# SpaceDudeGame Project Proposal
+# SpaceDudeGame
 
-spin on the traditional game of spaceman using vanilla Javascript
+spin on the traditional game of spaceman using 
+
+- ![](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
+- ![](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
+
+- ![](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
 
 ## Current goals
 
@@ -24,4 +30,4 @@ spin on the traditional game of spaceman using vanilla Javascript
 
 - CSS
 
--Javascript
+- Javascript
