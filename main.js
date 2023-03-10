@@ -1,20 +1,19 @@
 //array of all available words to guess from
 
 const wordBank = [
-'snarl', 'dominate', 
-//  'retailer', 'prejudice', 'integration',
-// 'separation', 'tradition', 'ghostwriter', 'section', 'decay',
-// 'convention', 'admission', 'diagram', 'ecstasy', 'activity',
-// 'medieval', 'brainstorm', 'portrait', 'moving', 'modernize',
-// 'dedicate', 'plagiarize', 'underline', 'consensus', 'litigation',
-// 'deteriorate', 'jazz', 'azure', 'pneumonia', 'wheezy',
-// 'rickshaw', 'jukebox', 'khaki', 'flyby', 'zombie',
-// 'vodka', 'larynx', 'espionage', 'mnemonic', 'pizza',
-// 'hamburger', 'jaywalk', 'uncle', 'freshman', 'continental',
-// 'marathon', 'unlike', 'compose', 'sunshine', 'figure',
-// 'advance', 'translate', 'angel', 'potential', 'question',
-// 'abolish', 'daughter', 'multiply', 'panic', 'attack',
-// 'future' , 'divide', 'friend', 'doctor', 'testament'
+'snarl', 'dominate', 'retailer', 'prejudice', 'integration',
+'separation', 'tradition', 'ghostwriter', 'section', 'decay',
+'convention', 'admission', 'diagram', 'ecstasy', 'activity',
+'medieval', 'brainstorm', 'portrait', 'moving', 'modernize',
+'dedicate', 'plagiarize', 'underline', 'consensus', 'litigation',
+'deteriorate', 'jazz', 'azure', 'pneumonia', 'wheezy',
+'rickshaw', 'jukebox', 'khaki', 'flyby', 'zombie',
+'vodka', 'larynx', 'espionage', 'mnemonic', 'pizza',
+'hamburger', 'jaywalk', 'uncle', 'freshman', 'continental',
+'marathon', 'unlike', 'compose', 'sunshine', 'figure',
+'advance', 'translate', 'angel', 'potential', 'question',
+'abolish', 'daughter', 'multiply', 'panic', 'attack',
+'future' , 'divide', 'friend', 'doctor', 'testament'
 ]
 
 
@@ -30,7 +29,7 @@ function Game() {
     let word = wordBank[Math.floor(Math.random() * wordBank.length)];
     word = word.toUpperCase();
 
-    //declaring variables we will be using to determine whether the user has won or not
+    //declaring variables that will be used throughout the code
     let guessedLetters = [];
     let hiddenWord = "";
     let wrongGuesses = 0;
