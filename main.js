@@ -17,6 +17,7 @@ const wordBank = [
 // 'future' , 'divide', 'friend', 'doctor', 'testament'
 ]
 
+
 //setting up our game function and the parameters for winning and losing
 
 const youWon = ""
@@ -90,7 +91,7 @@ function Game() {
     let wrongGuess = function() {
         wrongGuesses++;
         lost = wrongGuesses >= maxGuesses;
-		document.getElementById("currentGuess").innerText = `wrong guess: ${wrongGuesses} of ${maxGuesses}`;
+		document.getElementById("currentGuess").innerText = `guess: ${wrongGuesses} of ${maxGuesses}`;		
 		
 		//throws the correct word into the intro string if the user failed to guess the picked word.
 		
@@ -160,25 +161,26 @@ function listenForInput( game ) {
 function render( game )
 {
 	//grabbing our html elements
-
+	
     document.getElementById("word").innerHTML = game.getHiddendWord(); 
 	document.getElementById("guesses").innerHTML = "";
 	game.getPossibleGuesses().forEach( function(guess) {
 		let innerHtml = "<span class='guess'>" + guess + "</span>";
 		document.getElementById("guesses").innerHTML += innerHtml;
 	});
+
 	let winLose = document.getElementById('winLose');
 	if( game.isWon() )
 	{
 		winLose.value = youWon;
 		winLose.innerText = "you won! :D";
-		document.getElementById("spaceDude").innerHTML = "<img src = ./spacemanWonRoyaltyFree.jpg>"
+		document.getElementById("spaceDude").innerHTML = "<img src = ./spacemanWon.png>";
 	}
 	else if( game.isLost() )
 	{
 		winLose.value = youLost;
 		winLose.innerText = "you lose. :(";
-		document.getElementById("alien").innerHTML = "<img src = ./alienProbeRoyaltyFree.jpg>"
+		document.getElementById("alien").innerHTML = "<img src = ./alienProbe.png>";
 	}
 	else
 	{
